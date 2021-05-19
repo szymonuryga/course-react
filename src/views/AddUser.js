@@ -1,14 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
 import FormField from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
 import { Title } from 'components/atoms/Title/Title';
-import { UserShape } from 'types/index';
+import { UsersContext } from 'providers/UserProvider';
 
-const AddUser = ({ formValues, handleInputChange, handleAddUser }) => {
+const initialFormState = {
+  name: '',
+  attendance: '',
+  average: '',
+};
+
+const AddUser = () => {
+  const [formValues, setFormValues] = useState(initialFormState);
+  const { handleAddUser } = useContext(UsersContext);
+
+  const handleInputChange = (e) => {
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmitUser = (e) => {
+    e.preventDefault();
+    handleAddUser(formValues);
+    setFormValues(initialFormState);
+  };
+
   return (
-    <ViewWrapper as="form" onSubmit={handleAddUser}>
+    <ViewWrapper as="form" onSubmit={handleSubmitUser}>
       <Title>Add new student</Title>
       <FormField
         label="Name"
@@ -34,12 +55,6 @@ const AddUser = ({ formValues, handleInputChange, handleAddUser }) => {
       <Button type="submit">Add</Button>
     </ViewWrapper>
   );
-};
-
-AddUser.prototype = {
-  formValues: PropTypes.shape(UserShape),
-  handleAddUser: PropTypes.func.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
 };
 
 export default AddUser;

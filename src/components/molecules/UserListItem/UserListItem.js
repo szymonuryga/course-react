@@ -5,14 +5,11 @@ import Mark from 'components/atoms/Mark/Mark';
 import UserInfo from 'components/atoms/UserInfo/UserInfo';
 import { UserShape } from 'types';
 
-const UserListItem = ({
-  onClick,
-  userData: { name, average, attendance = '0%' },
-}) => {
+const UserListItem = ({ userData: { name, average, attendance = '0%' } }) => {
   return (
     <Wrapper>
       <Mark average={average} />
-      <UserInfo name={name} attendance={attendance} onClick={onClick} />
+      <UserInfo name={name} attendance={attendance} />
     </Wrapper>
   );
 };
