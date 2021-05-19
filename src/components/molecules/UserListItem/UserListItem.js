@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Wrapper } from './UserListItem.styles';
 import Mark from 'components/atoms/Mark/Mark';
 import UserInfo from 'components/atoms/UserInfo/UserInfo';
+import { UserShape } from 'types';
 
 const UserListItem = ({
   onClick,
@@ -17,11 +18,7 @@ const UserListItem = ({
 };
 
 UserListItem.propTypes = {
-  userData: PropTypes.shape({
-    average: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    attendance: PropTypes.string,
-  }),
+  userData: PropTypes.shape(UserShape),
 };
 
 export default UserListItem;
