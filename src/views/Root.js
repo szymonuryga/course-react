@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AddUser from './AddUser';
 import MainTemplate from 'components/templates/MainTemplate';
 import Dashboard from './Dashboard';
-import UserProvider from 'providers/UserProvider';
+import UserProvider from 'providers/UsersProvider';
 
 const Root = () => {
   return (
