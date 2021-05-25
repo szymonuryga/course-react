@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import DeleteButton from 'components/atoms/DeleteButton/DeleteButton';
 import { StyledInfo } from './UserInfo.styles';
-import { UsersContext } from 'providers/UserProvider';
+import { UsersContext } from 'providers/UsersProvider';
 
 const UserInfo = ({ name, attendance }) => {
   const { deleteUser } = useContext(UsersContext);
