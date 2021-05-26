@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper } from './UserListItem.styles';
+import { Wrapper } from './StudentsListItem.styles';
 import Mark from 'components/atoms/Mark/Mark';
 import UserInfo from 'components/atoms/UserInfo/UserInfo';
 import { UserShape } from 'types';
 
-const UserListItem = ({ userData: { name, average, attendance = '0%' } }) => {
+const StudentsListItem = ({
+  studentData: { name, average, attendance = '0%' },
+}) => {
   return (
     <Wrapper>
       <Mark average={average} />
@@ -14,8 +16,8 @@ const UserListItem = ({ userData: { name, average, attendance = '0%' } }) => {
   );
 };
 
-UserListItem.propTypes = {
+StudentsListItem.propTypes = {
   userData: PropTypes.shape(UserShape),
 };
 
-export default UserListItem;
+export default StudentsListItem;
