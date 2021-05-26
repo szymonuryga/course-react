@@ -1,6 +1,5 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
-import { renderWithProviders } from 'helpers/renderWithThemeProvider';
+import { render, screen } from 'test-utils';
 import NewsSection, { query } from './NewsSection';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
@@ -16,7 +15,7 @@ describe('News Section', () => {
 
   it('Displays error when the article are not loaded correctly', async () => {
     mock.onPost(API_ENDPOINT, { query }).reply(500);
-    renderWithProviders(<NewsSection />);
+    render(<NewsSection />);
     await screen.findByText(/Sorry/);
   });
 
@@ -28,7 +27,7 @@ describe('News Section', () => {
         ],
       },
     });
-    renderWithProviders(<NewsSection />);
+    render(<NewsSection />);
     await screen.findAllByText(/Test/);
   });
 });
