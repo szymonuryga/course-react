@@ -3,7 +3,6 @@ import { renderWithProviders } from 'helpers/renderWithThemeProvider';
 import { screen, fireEvent } from '@testing-library/react';
 import AddUser from './AddUser';
 import Dashboard from './Dashboard';
-import '@testing-library/jest-dom/extend-expect';
 
 describe('Add User', () => {
   it('Adds new user to the list', () => {
