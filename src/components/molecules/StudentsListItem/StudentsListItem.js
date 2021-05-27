@@ -7,9 +7,10 @@ import { UserShape } from 'types';
 
 const StudentsListItem = ({
   studentData: { name, average, attendance = '0%' },
+  ...props
 }) => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <Mark average={average} />
       <UserInfo name={name} attendance={attendance} />
     </Wrapper>

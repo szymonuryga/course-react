@@ -1,6 +1,8 @@
 import React from 'react';
-import { Wrapper } from './Mark.styles';
+import { StyledAverage } from './Mark.styles';
 
-const Mark = ({ average }) => <Wrapper mark={average}>{average}</Wrapper>;
+const Mark = ({ average }) => (
+  <StyledAverage mark={average}>{average}</StyledAverage>
+);
 
 export default Mark;

@@ -11,6 +11,7 @@ import {
 } from 'react-router-dom';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import Dashboard from './Dashboard';
+import Modal from 'components/organisms/Modal/Modal';
 
 const Root = () => {
   return (
