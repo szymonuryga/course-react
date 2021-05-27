@@ -1,12 +1,11 @@
 import React from 'react';
-import { renderWithProviders } from 'helpers/renderWithThemeProvider';
-import { screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from 'test-utils';
 import AddUser from './AddUser';
 import Dashboard from './Dashboard';
 
 describe('Add User', () => {
   it('Adds new user to the list', () => {
-    renderWithProviders(
+    render(
       <>
         <AddUser /> <Dashboard />
       </>
@@ -26,7 +25,7 @@ describe('Add User', () => {
   });
 
   it('Prevent addding new user if the consent is not chcecked', () => {
-    renderWithProviders(
+    render(
       <>
         <AddUser /> <Dashboard />
       </>

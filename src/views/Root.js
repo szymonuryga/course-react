@@ -9,7 +9,6 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import AddUser from './AddUser';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import Dashboard from './Dashboard';
 
