@@ -23,7 +23,7 @@ export const useStudents = () => {
   const getStudentById = useCallback(async (studentId) => {
     try {
       const result = await axios.get(`/students/${studentId}`);
-      return result.data.student;
+      return result.data.students;
     } catch (e) {
       console.log(e);
     }

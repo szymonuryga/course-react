@@ -10,7 +10,7 @@ const UserInfo = ({ name, attendance }) => {
       <p>
         {name} <DeleteButton onClick={() => deleteUser(name)} />
       </p>
-      <p>attendance :{attendance}</p>
+      <p>attendance : {attendance}%</p>
     </StyledInfo>
   );
 };
